@@ -1,0 +1,70 @@
+
+<h5><b>Inventory</b></h5>
+
+<form [formGroup]="searchForm">
+    <div class="d-flex pt-2">
+            <div class="row d-flex col-lg-12 m-0 p-0">
+                <div class="col-lg-4 pt-2">
+                    <input type="text" class="form-control" formControlName="search"  placeholder="Search Product...">
+                </div>
+                <div class="col-lg-2 pt-2">
+
+                <button class="save-button float-right" (click)="updateFilter(this.searchForm.get('search').value)" >Submit</button>
+</div>
+            </div>
+        
+    </div>
+    <div  *ngIf="showDetails"class="pt-4">
+        <div class="d-flex  col-sm-12 pt-2">
+            <div class="d-flex col-lg-6">
+              <label class="col-lg-6 bold">Product Name</label>
+              <span class="col-lg-1">:</span>
+              <span class="col-lg-7">{{searchList?.name}}</span>
+            </div>
+            <div class="d-flex col-lg-6">
+              <label class="col-lg-6 bold">Brand Name</label>
+              <span class="col-lg-1">:</span>
+              <span class="col-lg-7">{{searchList?.name}}</span>
+            </div>
+          </div>
+          <div class="d-flex  col-sm-12 pt-2">
+            <div class="d-flex col-lg-6">
+              <label class="col-lg-6 bold">Catrgory Name</label>
+              <span class="col-lg-1">:</span>
+              <span class="col-lg-7">{{searchList?.category?.category_name}}</span>
+            </div>
+            <div class="d-flex col-lg-6">
+              <label class="col-lg-6 bold">Sub Category Name</label>
+              <span class="col-lg-1">:</span>
+              <span class="col-lg-7">{{searchList?.sub_category?.sub_category_name}}</span>
+            </div>
+          </div>
+          <div class="d-flex  col-sm-12 pt-2">
+            <div class="d-flex col-lg-6">
+              <label class="col-lg-6 bold">Units</label>
+              <span class="col-lg-1">:</span>
+              <span class="col-lg-7">{{searchList?.units}}</span>
+            </div>
+            <div class="d-flex col-lg-6">
+              <label class="col-lg-6 bold">Remaining Units</label>
+              <span class="col-lg-1">:</span>
+              <span class="col-lg-7">{{searchList?.remaining_units}}</span>
+            </div>
+          </div>
+          <div class="d-flex  col-sm-12 pt-2">
+            <div class="d-flex col-lg-6">
+              <label class="col-lg-6 bold">Price</label>
+              <span class="col-lg-1">:</span>
+              <span class="col-lg-7">{{searchList?.price}}</span>
+            </div>
+            <div class="d-flex col-lg-6">
+              <label class="col-lg-6 bold">Status</label>
+              <span class="col-lg-1">:</span>
+              <span class="col-lg-7">{{searchList?.status}}</span>
+            </div>
+          </div>
+       
+
+        
+    </div>
+</form>

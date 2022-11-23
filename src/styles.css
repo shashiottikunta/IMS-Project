@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~ngx-toastr/toastr';
+/* Add application styles & imports to this file! */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.add-button {
+    border-radius: 2px;
+    background-color: #556B2F;
+    border: none;
+    color: #fff !important;
+    padding: 7px 15px;
+    font-size: 13px;
+  }
+  .save-button {
+    border-radius: 2px;
+    background-color: #556B2F;
+    border: none;
+    color: #fff !important;
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+  .mandatory {
+    color: #f70d1f;
+  }
+  .reset{
+    font-size: x-large;
+    padding-top: 5px
+  }
+

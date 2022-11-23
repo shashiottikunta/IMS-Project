@@ -1,0 +1,16 @@
+#sidebar {
+    position: fixed;
+    left: 0;
+    width: 275px;
+    height: 100%;
+    z-index: 100;   
+}
+#content {
+    position:absolute;
+    top:80px;
+    margin-left:250px;
+    overflow: auto;
+    width:837px; 
+    }
+    
+

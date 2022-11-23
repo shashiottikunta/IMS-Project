@@ -1,0 +1,21 @@
+
+<form [formGroup]="categorForm">
+    <div class="d-flex">
+        <div class="col-lg-11 p-0">
+            <div class="row d-flex col-lg-12 m-0 p-0">
+                <div class="col-lg-12 p-2">
+                    <label>Category Name <span class="mandatory">*</span></label>
+                    <input class="form-control"  formControlName="categoryName" placeholder="Enter Category Name"
+                    [ngClass]="{ 'is-invalid': (submitted ||categorForm.controls.categoryName.touched) && categorForm.controls.categoryName.errors }">
+                    <div
+                    *ngIf="(submitted ||categorForm.controls.categoryName.touched) && categorForm.controls.categoryName.errors"
+                    class="invalid-feedback">
+                    <div *ngIf="categorForm.controls.categoryName.errors.required">Please Enter Category Name
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <button class="save-button float-right" (click)="postCategory()">Submit</button>
+        </div>
+    </div>
+</form>

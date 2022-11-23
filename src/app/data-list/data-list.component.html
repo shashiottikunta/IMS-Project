@@ -1,0 +1,28 @@
+<p>data-list works!</p>
+<mat-form-field>
+    <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <ngx-mat-datetime-picker #picker >
+      <ng-template>
+        <span>OK</span>
+      </ng-template>
+    </ngx-mat-datetime-picker>
+  </mat-form-field>
+
+
+  <input type="text" bsDatepicker>
+
+<button (click)="modalShow()">Submit</button>
+  <div bsModal #data="bs-modal" class="modal fade" id="dataModal" [config]="{backdrop: 'static'}">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header header-color">
+        </div>
+        <div class="modal-body">
+         Helooo
+        </div>
+       
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,173 @@
+<div>
+  <form [formGroup]="searchform">
+    <div class="row">
+      <div class="col-lg-12 d-flex pt-2">
+        <div class="col-lg-4">
+          <input type="text" class="form-control" formControlName="search"
+            (focusout)="updateFilter(this.searchform.get('search').value)" placeholder="Search Brand...">
+        </div>
+        <div class="col-lg-2">
+          <i class="fa fa-refresh reset" (click)="reset()" aria-hidden="true"></i>
+
+        </div>
+        <div class="col-lg-6">
+
+          <button type="button" [routerLink]="['/addBrand']" class="add-button float-right">Add Brand</button>
+    
+    </div>
+        
+      </div>
+
+    </div>
+    
+  </form>
+
+
+  <br>
+  <h5><b>Manage Brand</b></h5>
+
+
+  <div *ngIf="showSarch">
+    <div class="dt-responsive table-responsive searchResultDatatable pt-2">
+      <ngx-datatable ngx-resize-watcher #myTable class="data-table bootstrap datatable material" [columnMode]="'flex'"
+        [footerHeight]="50" [rowHeight]="'auto'" [rows]="brandList" [sortType]="'single'" [limit]="10"
+        (page)="setPage($event)">
+
+
+
+        <ngx-datatable-column resizeable="false" prop="name" [flexGrow]="4" [sortable]="true">
+          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+            <span class="datatable-header-cell-wrapper" (click)="sort()">
+              <span title="Client Title" class="datatable-header-cell-label draggable">Brand Name
+              </span>
+            </span>
+          </ng-template>
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+            <a class="file-id">{{row.name ? row.name :'' }}</a>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column resizeable="false" prop="status" [flexGrow]="4" [sortable]="true">
+          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+            <span class="datatable-header-cell-wrapper" (click)="sort()">
+              <span title="Client Title" class="datatable-header-cell-label draggable">Status
+              </span>
+            </span>
+          </ng-template>
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+            <a class="file-id">{{row.status ? row.status :'' }}</a>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column resizeable="false" prop="city" [flexGrow]="4" [sortable]="true">
+          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+            <span class="datatable-header-cell-wrapper" (click)="sort()">
+              <span title="Client Title" class="datatable-header-cell-label draggable">Actions
+              </span>
+            </span>
+          </ng-template>
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+            <i (click)="updateBrand(row)"  class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;
+
+
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-footer>
+          <ng-template ngx-datatable-footer-template let-rowCount="count" let-pageSize="pageSize"
+            let-selectedCount="selectedCount" let-curPage="curPage" let-offset="offset">
+            <div class="rows-per-page-outer">
+              <div class="rows-per-page">
+                <span class="rows-per-page-text">Rows Per Page</span>
+                <div class="rows-per-page-select">
+                  <select [ngModel]="pageSize" [ngModelOptions]="{standalone: true}"
+                    (change)="onPageSizeChange($event.target.value)" class="page-size-combo phoenix-select"
+                    name="pageSize">
+                    <option *ngFor="let size of sizeList" [value]="size" [selected]="size === currentPageLimit">
+                      {{size}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <datatable-pager [pagerLeftArrowIcon]="'datatable-icon-left'" [pagerRightArrowIcon]="'datatable-icon-right'"
+              [pagerPreviousIcon]="'datatable-icon-prev'" [pagerNextIcon]="'datatable-icon-skip'" [page]="curPage"
+              [size]="pageSize" [count]="count" [hidden]="!((count / pageSize) > 1)"
+              (change)="myTable.onFooterPage($event)">
+            </datatable-pager>
+            <div class="total-records">Total Records: {{count}}</div>
+          </ng-template>
+        </ngx-datatable-footer>
+      </ngx-datatable>
+    </div>
+
+  </div>
+
+  <div *ngIf="!showSarch">
+    <div class="dt-responsive table-responsive searchResultDatatable pt-2">
+      <ngx-datatable ngx-resize-watcher #myTable class="data-table bootstrap datatable material" [columnMode]="'flex'"
+        [footerHeight]="50" [rowHeight]="'auto'" [rows]="brandList" [sortType]="'single'" [limit]="10"
+        (page)="setPage($event)">
+
+
+
+        <ngx-datatable-column resizeable="false" prop="name" [flexGrow]="4" [sortable]="true">
+          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+            <span class="datatable-header-cell-wrapper" (click)="sort()">
+              <span title="Client Title" class="datatable-header-cell-label draggable">Brand Name
+              </span>
+            </span>
+          </ng-template>
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+            <a class="file-id">{{row.name ? row.name :'' }}</a>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column resizeable="false" prop="status" [flexGrow]="4" [sortable]="true">
+          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+            <span class="datatable-header-cell-wrapper" (click)="sort()">
+              <span title="Client Title" class="datatable-header-cell-label draggable">Status
+              </span>
+            </span>
+          </ng-template>
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+            <a class="file-id">{{row.status ? row.status :'' }}</a>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column resizeable="false" prop="city" [flexGrow]="4" [sortable]="true">
+          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+            <span class="datatable-header-cell-wrapper" (click)="sort()">
+              <span title="Client Title" class="datatable-header-cell-label draggable">Actions
+              </span>
+            </span>
+          </ng-template>
+          <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+            <i (click)="updateBrand(row)" class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;
+
+
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-footer>
+          <ng-template ngx-datatable-footer-template let-rowCount="count" let-pageSize="pageSize"
+            let-selectedCount="selectedCount" let-curPage="curPage" let-offset="offset">
+            <div class="rows-per-page-outer">
+              <div class="rows-per-page">
+                <span class="rows-per-page-text">Rows Per Page</span>
+                <div class="rows-per-page-select">
+                  <select [ngModel]="pageSize" [ngModelOptions]="{standalone: true}"
+                    (change)="onPageSizeChange($event.target.value)" class="page-size-combo phoenix-select"
+                    name="pageSize">
+                    <option *ngFor="let size of sizeList" [value]="size" [selected]="size === currentPageLimit">
+                      {{size}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <datatable-pager [pagerLeftArrowIcon]="'datatable-icon-left'" [pagerRightArrowIcon]="'datatable-icon-right'"
+              [pagerPreviousIcon]="'datatable-icon-prev'" [pagerNextIcon]="'datatable-icon-skip'" [page]="curPage"
+              [size]="pageSize" [count]="count" [hidden]="!((count / pageSize) > 1)"
+              (change)="myTable.onFooterPage($event)">
+            </datatable-pager>
+            <div class="total-records">Total Records: {{count}}</div>
+          </ng-template>
+        </ngx-datatable-footer>
+      </ngx-datatable>
+    </div>
+  </div>
+
+</div>

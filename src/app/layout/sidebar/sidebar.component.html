@@ -1,0 +1,432 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+              
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                   
+                    <li>
+                        <a [routerLink]="['/dashboard']" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;">Dashboard</span> </a>
+                       
+                    </li>
+                    <li>
+                        <a [routerLink]="['/brand']" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;">Brand</span> </a>
+                           
+                       
+                    </li>
+                    <li>
+                        <a [routerLink]="['/category']" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;">Category</span></a>
+                      
+                        
+                       
+                    </li>
+                    <li>
+                        <a  [routerLink]="['/sub-category']"sub-category data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;">Sub Category</span></a>
+                        
+                       
+                    <li>
+                        <a [routerLink]="['/product']"class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;">Product</span> </a>
+                       
+                       
+                    </li>
+                    <li>
+                        <a [routerLink]="['/inventory']" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;">Inventory</span> </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/cart']" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;">Cart</span> </a>
+                    </li>
+                   
+                    <li>
+                        <a  [routerLink]="['/searchInvoice']" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;">Search Invoice</span> </a>
+                    </li>
+                    <li>
+                        <a  [routerLink]="['/customerDetails']" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;">Customer Detail</span> </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/changePassword']" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"> Change Password</span> </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/login']" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"> Logout</span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                    <li>
+                        <a  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline color" style="font-size: 18px;"></span> </a>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+      
+    </div>
+</div>

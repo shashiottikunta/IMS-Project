@@ -1,0 +1,96 @@
+<h5><b>Search Invoice</b></h5>
+<form [formGroup]="searcgInvoiceForm">
+    <div class="d-flex">
+        <div class="col-lg-11 p-0">
+            <div class="row d-flex col-lg-12 m-0 p-0">
+                <div class="col-lg-12 p-2">
+                    <label>Search Invoice <span class="mandatory">*</span></label>
+                    <input class="form-control"  formControlName="searchInvoice" placeholder="Search By Billing Number">
+                </div>
+            </div>
+            <button class="save-button float-right" (click)="search(this.searcgInvoiceForm.get('searchInvoice').value)">Submit</button>
+        </div>
+    </div>
+    <br>
+<br>
+<div *ngIf="showData">
+<b>Customer Name</b> : {{searchList?.customer_name}}         
+<b  style="padding-left: 150px">Customer Mobile Number</b> : {{searchList?.customer_mobile}}<br><br>
+<b>Mode Of Payment</b> : {{searchList?.payment_mode}}     
+
+
+<hr>
+<h5>Products Inventory</h5>
+<div class="dt-responsive table-responsive searchResultDatatable pt-2" >
+  <ngx-datatable ngx-resize-watcher #myTable class="data-table bootstrap datatable material"
+  [columnMode]="'flex'" [footerHeight]="50" [rowHeight]="'auto'" [rows]="productList" [sortType]="'single'"
+  [limit]="10" (page)="setPage($event)" >
+
+
+
+    <ngx-datatable-column resizeable="false" prop="product_name" [flexGrow]="4" [sortable]="true">
+      <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+        <span class="datatable-header-cell-wrapper" (click)="sort()">
+          <span title="Client Title" class="datatable-header-cell-label draggable">Product Name
+          </span>
+        </span>
+      </ng-template>
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+        <a class="file-id">{{row.product_name ? row.product_name :'' }}</a>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column resizeable="false" prop="quantiy" [flexGrow]="4" [sortable]="true">
+      <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+        <span class="datatable-header-cell-wrapper" (click)="sort()">
+          <span title="Client Title" class="datatable-header-cell-label draggable">Quantiy
+          </span>
+        </span>
+      </ng-template>
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+        <a class="file-id">{{row.quantiy ? row.quantiy :'' }}</a>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column resizeable="false" prop="price" [flexGrow]="4" [sortable]="true">
+      <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+        <span class="datatable-header-cell-wrapper" (click)="sort()">
+          <span title="Client Title" class="datatable-header-cell-label draggable">Price
+          </span>
+        </span>
+      </ng-template>
+      <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+        <a class="file-id">{{row.price ? row.price :'' }}</a>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-footer>
+      <ng-template ngx-datatable-footer-template let-rowCount="count" let-pageSize="pageSize"
+          let-selectedCount="selectedCount" let-curPage="curPage" let-offset="offset">
+          <div class="rows-per-page-outer">
+              <div class="rows-per-page">
+                  <span class="rows-per-page-text">Rows Per Page</span>
+                  <div class="rows-per-page-select">
+                      <select [ngModel]="pageSize" [ngModelOptions]="{standalone: true}"
+                          (change)="onPageSizeChange($event.target.value)"
+                          class="page-size-combo phoenix-select" name="pageSize">
+                          <option *ngFor="let size of sizeList" [value]="size"
+                              [selected]="size === currentPageLimit"> {{size}}</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+          <datatable-pager [pagerLeftArrowIcon]="'datatable-icon-left'"
+              [pagerRightArrowIcon]="'datatable-icon-right'"
+              [pagerPreviousIcon]="'datatable-icon-prev'" [pagerNextIcon]="'datatable-icon-skip'"
+              [page]="curPage" [size]="pageSize" [count]="count" [hidden]="!((count / pageSize) > 1)"
+              (change)="myTable.onFooterPage($event, this.searcgInvoiceForm.get('searchInvoice').value )">
+          </datatable-pager>
+          <div class="total-records">Total Records: {{count}}</div>
+      </ng-template>
+  </ngx-datatable-footer>
+  </ngx-datatable>
+</div>
+<b>Grand Total : </b> {{searchList?.total_amount}}
+</div>
+
+</form>
+
+

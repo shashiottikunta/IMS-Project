@@ -1,0 +1,37 @@
+:host ::ng-deep.mat-form-field-wrapper {
+    padding-top: 1.34375em !important;
+    padding-bottom: 0px !important;
+    margin: 0px !important;
+}
+.rows-per-page {
+	float: left;
+	margin-right: 5px;
+	.rows-per-page-text {
+		float: right;
+		margin-top: 0px;
+		font-size: 13px;
+		width: 100px;
+		font-family: 'Roboto';
+	}
+
+	.rows-per-page-select {
+		float: left;
+		margin-right: 5px;
+		margin-left: 15px;
+
+		select {
+			padding: 5px;
+		}
+
+		select.page-size-combo {
+			font-size: 13px !important;
+			font-family: 'Roboto';
+			background-color: white;
+			background-position: 74%;
+			margin-bottom: 0px;
+			width: auto;
+			// background-image: url('../assets/images/Icon_dropdownarrow_blue.png');
+			// background-repeat: no-repeat;
+		}
+	}
+}

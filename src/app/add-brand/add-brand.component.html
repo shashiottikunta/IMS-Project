@@ -1,0 +1,20 @@
+<form [formGroup]="brnadForm">
+    <div class="d-flex">
+        <div class="col-lg-11 p-0">
+            <div class="row d-flex col-lg-12 m-0 p-0">
+                <div class="col-lg-12 p-2">
+                    <label>Brand Name <span class="mandatory">*</span></label>
+                    <input class="form-control"  formControlName="brandName" placeholder="Enter Brand Name"
+                    [ngClass]="{ 'is-invalid': (submitted ||brnadForm.controls.brandName.touched) && brnadForm.controls.brandName.errors }">
+                    <div
+                    *ngIf="(submitted ||brnadForm.controls.brandName.touched) && brnadForm.controls.brandName.errors"
+                    class="invalid-feedback">
+                    <div *ngIf="brnadForm.controls.brandName.errors.required">Please Enter Brand Name
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <button class="save-button float-right" (click)="postBrand()">Submit</button>
+        </div>
+    </div>
+</form>

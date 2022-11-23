@@ -1,0 +1,104 @@
+<form [formGroup]="productForm">
+    <div class="d-flex">
+        <div class="col-lg-11 p-0">
+            <div class="row d-flex col-lg-12 m-0 p-0">
+                <div class="col-lg-12 p-2">
+                    <label>Product Name <span class="mandatory">*</span></label>
+                    <input class="form-control"  formControlName="productName" placeholder="Enter Product Name"
+                    [ngClass]="{ 'is-invalid': (submitted ||productForm.controls.productName.touched) && productForm.controls.productName.errors }">
+                    <div
+                  *ngIf="(submitted ||productForm.controls.productName.touched) && productForm.controls.productName.errors"
+                  class="invalid-feedback">
+                  <div *ngIf="productForm.controls.productName.errors.required">Please Enter Product Name
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-12 p-2">
+                    <label>Category Name <span class="mandatory">*</span></label>
+                    <select (change)="getSubCategory(productForm.controls.categoryName.value)"class="form-control input-rounded" formControlName="categoryName" placeholder="Select Category Name"
+                    [ngClass]="{ 'is-invalid': (submitted ||productForm.controls.categoryName.touched) && productForm.controls.categoryName.errors }">
+                    <option disabled value="">Select Category Name</option>
+                    <option *ngFor="let category of categoryList" [value]="category.id">{{category.name}}
+                    </option>
+                  </select>
+                  <div
+                  *ngIf="(submitted ||productForm.controls.categoryName.touched) && productForm.controls.categoryName.errors"
+                  class="invalid-feedback">
+                  <div *ngIf="productForm.controls.categoryName.errors.required">Please Select Category
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-12 p-2">
+                    <label> Sub Category Name <span class="mandatory">*</span></label>
+                    <select class="form-control input-rounded" formControlName="subCategoryName" placeholder="Select Sub Category Name"
+                    [ngClass]="{ 'is-invalid': (submitted ||productForm.controls.subCategoryName.touched) && productForm.controls.subCategoryName.errors }">
+                    <option disabled value="">Select Sub Category Name</option>
+                    <option *ngFor="let category of subCategoryList1" [value]="category.id">{{category.name}}
+                    </option>
+                  </select>
+                  <div
+                  *ngIf="(submitted ||productForm.controls.subCategoryName.touched) && productForm.controls.subCategoryName.errors"
+                  class="invalid-feedback">
+                  <div *ngIf="productForm.controls.subCategoryName.errors.required">Please Select Sub Category
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-12 p-2">
+                    <label> Brand Name <span class="mandatory">*</span></label>
+                    <select class="form-control input-rounded" formControlName="brandName" placeholder="Select Brand Name"
+                    [ngClass]="{ 'is-invalid': (submitted ||productForm.controls.brandName.touched) && productForm.controls.brandName.errors }">
+                    <option disabled value=''>Select Brand Name</option>
+                    <option *ngFor="let brand of brandList" [value]="brand.id">{{brand.name}}
+                    </option>
+                  </select>
+                  <div
+                  *ngIf="(submitted ||productForm.controls.brandName.touched) && productForm.controls.brandName.errors"
+                  class="invalid-feedback">
+                  <div *ngIf="productForm.controls.brandName.errors.required">Please Select Brand
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-12 p-2">
+                    <label>Modal Number </label>
+                    <input class="form-control"  formControlName="modalNumber" placeholder="Enter Modal Number"
+                    [ngClass]="{ 'is-invalid': (submitted ||productForm.controls.modalNumber.touched) && productForm.controls.modalNumber.errors }">
+                 
+                </div>
+                <div class="col-lg-12 p-2">
+                    <label>Stock(units)<span class="mandatory">*</span></label>
+                    <input class="form-control"  formControlName="stock" placeholder="Enter Stock"
+                    [ngClass]="{ 'is-invalid': (submitted ||productForm.controls.stock.touched) && productForm.controls.stock.errors }">
+                    <div
+                  *ngIf="(submitted ||productForm.controls.stock.touched) && productForm.controls.stock.errors"
+                  class="invalid-feedback">
+                  <div *ngIf="productForm.controls.stock.errors.required">Please Enter Stock
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-12 p-2">
+                    <label>Price(Per unit)<span class="mandatory">*</span></label>
+                    <input class="form-control"  formControlName="price" placeholder="Enter Price"
+                    [ngClass]="{ 'is-invalid': (submitted ||productForm.controls.price.touched) && productForm.controls.price.errors }">
+                    <div
+                  *ngIf="(submitted ||productForm.controls.price.touched) && productForm.controls.price.errors"
+                  class="invalid-feedback">
+                  <div *ngIf="productForm.controls.price.errors.required">Please Enter Price
+                  </div>
+                </div>
+                </div>
+                <div  *ngIf="showStatus"class="col-lg-12 p-2">
+                  <label>Select Status </label>
+                  <select class="form-control input-rounded" formControlName="status" 
+                  >
+                  <option disabled value="">Select Status</option>
+                  <option *ngFor="let satus of statusList" [value]="satus">{{satus}}
+                  </option>
+                </select>
+                
+             
+              </div>
+            </div>
+            <button class="save-button float-right" (click)="postProduct()">Submit</button>
+        </div>
+    </div>
+</form>

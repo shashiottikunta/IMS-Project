@@ -1,0 +1,91 @@
+<div>
+    <h5><b>Cart</b></h5>
+    <form [formGroup]="cartForm">
+        <div class="d-flex">
+            <div class="col-lg-11 p-0">
+                <div class="row d-flex col-lg-12 m-0 p-0">
+                    <div class="col-lg-12 p-2">
+                        <label>Customer Name <span class="mandatory">*</span></label>
+                        <input class="form-control" formControlName="customerName" placeholder="Enter Customer Name">
+                    </div>
+                    <div class="col-lg-12 p-2">
+                        <label>Customer Mobile Number <span class="mandatory">*</span></label>
+                        <input class="form-control" formControlName="customerMobilNumber"
+                            placeholder="Enter Customer Mobile Number">
+                    </div>
+                   
+                </div>
+                <button class="save-button float-right" (click)="addCart()">Add Product</button>
+
+            </div>
+        </div>
+        <label>Product Cart</label>
+
+        <div class="dt-responsive table-responsive searchResultDatatable pt-2">
+            <ngx-datatable ngx-resize-watcher #myTable class="data-table bootstrap datatable material" [columnMode]="'flex'"
+              [rows]="productDetails">
+        
+              <ngx-datatable-column resizeable="false" prop="name" [flexGrow]="4" [sortable]="true">
+                <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                  <span class="datatable-header-cell-wrapper" (click)="sort()">
+                    <span title="Client Title" class="datatable-header-cell-label draggable">Product Name
+                    </span>
+                  </span>
+                </ng-template>
+                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+                  <a class="file-id">{{row.name ? row.name :'' }}</a>
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column resizeable="false" prop="status" [flexGrow]="4" [sortable]="true">
+                <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                  <span class="datatable-header-cell-wrapper" (click)="sort()">
+                    <span title="Client Title" class="datatable-header-cell-label draggable">Price
+                    </span>
+                  </span>
+                </ng-template>
+                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+                  <a class="file-id">{{row.units ? row.units :'' }}</a>
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column resizeable="false" prop="city" [flexGrow]="4" [sortable]="true">
+                <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                  <span class="datatable-header-cell-wrapper" (click)="sort()">
+                    <span title="Client Title" class="datatable-header-cell-label draggable">Units
+                    </span>
+                  </span>
+                </ng-template>
+                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+                  <a class="file-id">{{row.price ? row.price :'' }}</a>
+
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column resizeable="false" prop="city" [flexGrow]="4" [sortable]="true">
+                <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                  <span class="datatable-header-cell-wrapper" (click)="sort()">
+                    <span title="Client Title" class="datatable-header-cell-label draggable">Total 
+                    </span>
+                  </span>
+                </ng-template>
+                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row">
+                  <a class="file-id">{{row.units * row.price}}</a>
+
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+          </div>
+
+          <div class="col-lg-12 p-2">
+            <label>Mode Of Payment <span class="mandatory">*</span></label><br>
+          
+            <input type="radio"  formControlName="cash"  value="cash">
+             <label >Cash</label>
+             <input type="radio"formControlName="cash" value="card">
+              <label >Card</label><br>
+
+        </div>
+        <div class="float-right">
+            <button class="save-button float-right" (click)="postCart()">Submit</button>
+
+        </div>
+    </form>
+</div>

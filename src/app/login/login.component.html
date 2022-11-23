@@ -1,0 +1,43 @@
+<div class="auth-wrapper" style="background-image: url('./assets/images/image.jpg')"  >
+  <div class="container-fluid h-100" >
+     <div class="row flex-row h-100">
+        <div class="col-xl-8 col-lg-6 col-md-5 p-0 d-md-block d-lg-block d-sm-none d-none" >
+           <div class="lavalite-bg" >
+              <div class="lavalite-overlay"></div>
+           </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-7 my-auto p-0" id="LoginForm">
+           <div class="login-page">
+              <div class="  ">
+                 <a href="#">
+                    <h3 class="heading" style="color: #03431c; margin-top: 30px; text-align: center;"><strong>Inventory Management System</strong></h3>
+                 </a><br>
+              </div>      
+              <form [formGroup]="loginForm" (ngSubmit)="submitLogin()" >
+                 <div class="form-group">
+                    <div class="input-group-prepend">
+                    </div>
+                    <input type="text" formControlName="username" #emailId placeholder="Email"
+                       id="loginEmailId" class="form-control" maxlength="120">
+                 </div>
+                 <div class="form-group">
+                    <div class="input-group-prepend">
+                    </div>
+                    <input formControlName="password" maxlength="120"
+                       placeholder="Passsword" id="loginPassword" class="form-control"
+                       >
+                    <div     
+                       class="invalid-feedback">
+                    </div>
+                 </div>
+                 <div class="form-group text-center">
+                    <button class="submit-button btn-lg" style="background-color: #03431c; color: white; overflow: visible;">LOGIN</button>
+                 </div>
+              </form>
+           </div>
+
+        </div>
+
+     </div>
+  </div>
+</div>

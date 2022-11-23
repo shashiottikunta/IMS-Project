@@ -1,0 +1,35 @@
+<form [formGroup]="subCategoryForm">
+    <div class="d-flex">
+        <div class="col-lg-11 p-0">
+            <div class="row d-flex col-lg-12 m-0 p-0">
+                <div class="col-lg-12 p-2">
+                    <label>Category Name <span class="mandatory">*</span></label>
+                    <select class="form-control input-rounded" formControlName="CategoryName" placeholder="Select Category Name"
+                    [ngClass]="{ 'is-invalid': (submitted ||subCategoryForm.controls.CategoryName.touched) && subCategoryForm.controls.CategoryName.errors }">
+                    <option disabled value=''>Select Category Name</option>
+                    <option *ngFor="let category of categoryList" [value]="category.id">{{category.name}}
+                    </option>
+                  </select>
+                  <div
+                  *ngIf="(submitted ||subCategoryForm.controls.CategoryName.touched) && subCategoryForm.controls.CategoryName.errors"
+                  class="invalid-feedback">
+                  <div *ngIf="subCategoryForm.controls.CategoryName.errors.required">Please Select Category
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-12 p-2">
+                    <label>Sub Category Name <span class="mandatory">*</span></label>
+                    <input class="form-control"  formControlName="subCategoryName" placeholder="Enter Sub Category Name"
+                    [ngClass]="{ 'is-invalid': (submitted ||subCategoryForm.controls.subCategoryName.touched) && subCategoryForm.controls.subCategoryName.errors }">
+                    <div
+                    *ngIf="(submitted ||subCategoryForm.controls.subCategoryName.touched) && subCategoryForm.controls.subCategoryName.errors"
+                    class="invalid-feedback">
+                    <div *ngIf="subCategoryForm.controls.subCategoryName.errors.required">Please Enter Sub Category Name
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <button class="save-button float-right" (click)="postSubCategory()">Submit</button>
+        </div>
+    </div>
+</form>
